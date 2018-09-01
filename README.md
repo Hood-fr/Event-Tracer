@@ -1,2 +1,0 @@
-# Event-Tracer
-Piwigo plugin
