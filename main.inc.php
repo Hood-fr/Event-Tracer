@@ -37,8 +37,13 @@ class EventTracer
   var $my_config;
   var $trigger_counts = array();
 
+  function __construct()
+  {
+  }
+
   function EventTracer()
   {
+      self::__construct();
   }
 
   function get_config_file_dir()
