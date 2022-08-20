@@ -1,0 +1,1 @@
+Per als desenvolupadors. Mostra totes les trucades a trigger.event.
