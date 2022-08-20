@@ -23,11 +23,12 @@
 
 /*
 Plugin Name: Event tracer
-Version: 2.7.a
+Version: 12.a
 Description: For developers. Shows all calls to trigger_change.
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=288
 Author: Piwigo team
 Author URI: http://piwigo.org
+Has Settings: true
 */
 
 if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
@@ -149,23 +150,12 @@ class EventTracer
       }
     }
   }
-
-  function plugin_admin_menu($menu)
-  {
-    array_push($menu,
-        array(
-          'NAME' => 'Event Tracer',
-          'URL' => get_admin_plugin_menu_link(dirname(__FILE__).'/tracer_admin.php')
-        )
-      );
-    return $menu;
-  }
 }
 
 $obj = new EventTracer();
 $obj->load_config();
 
-add_event_handler('get_admin_plugin_menu_links', array(&$obj, 'plugin_admin_menu') );
+
 add_event_handler('loc_begin_page_tail', array(&$obj, 'on_page_tail') );
 add_event_handler('trigger', array(&$obj, 'on_trigger') );
 set_plugin_data($plugin['id'], $obj);

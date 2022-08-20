@@ -1,1 +1,1 @@
-Für Entwickler. Zeigt Aufrufe für trigger_event
+Für Entwickler. Aufrufe für trigger_event anzeigen.
